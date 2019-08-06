@@ -1,0 +1,105 @@
+# Kodi Media Center language file
+# Addon Name: SkTonline
+# Addon id: plugin.video.sktonline
+# Addon Provider: cache-sk
+msgid ""
+msgstr ""
+
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: cs\n"
+
+msgctxt "#30000"
+msgid "SkTonline"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Unexpected error occured:"
+msgstr "Nastala neočekávaná chyba:"
+
+msgctxt "#30003"
+msgid "Previous page"
+msgstr "Předešlá stránka"
+
+msgctxt "#30004"
+msgid "Next page"
+msgstr "Následující stránka"
+
+msgctxt "#30005"
+msgid "Search"
+msgstr "Vyhledávání"
+
+msgctxt "#30201"
+msgid "All"
+msgstr "Vše"
+
+msgctxt "#30202"
+msgid "Documents CZ/SK dub"
+msgstr "Dokumenty CZ/SK dabing"
+
+msgctxt "#30203"
+msgid "Documents CZ/SK sub"
+msgstr "Dokumenty CZ/SK titulky"
+
+msgctxt "#30204"
+msgid "Movies"
+msgstr "Filmy"
+
+msgctxt "#30205"
+msgid "Movies CZ/SK dub"
+msgstr "Filmy CZ/SK dabing"
+
+msgctxt "#30206"
+msgid "Movies CZ/SK sub"
+msgstr "Filmy CZ/SK titulky"
+
+msgctxt "#30207"
+msgid "Animated movies CZ/SK dub"
+msgstr "Kreslené filmy CZ/SK dabing"
+
+msgctxt "#30208"
+msgid "Concerts / Music videos"
+msgstr "Koncerty / Klipy"
+
+msgctxt "#30209"
+msgid "Other"
+msgstr "Ostatní"
+
+msgctxt "#30210"
+msgid "Series CZ/SK dub"
+msgstr "Seriály CZ/SK dabing"
+
+msgctxt "#30211"
+msgid "Series CZ/SK sub"
+msgstr "Seriály CZ/SK titulky"
+
+msgctxt "#30212"
+msgid "Trailers"
+msgstr "Trailery"
+
+msgctxt "#30301"
+msgid "Being Watched"
+msgstr "Právě sledované"
+
+msgctxt "#30302"
+msgid "Most Recent"
+msgstr "Nejnovější"
+
+msgctxt "#30303"
+msgid "Most Viewed"
+msgstr "Nejsledovanější"
+
+msgctxt "#30304"
+msgid "Most Commented"
+msgstr "Nejvíce komentované"
+
+msgctxt "#30305"
+msgid "Top Rated"
+msgstr "Top hodnocené"
+
+msgctxt "#30306"
+msgid "Top Favorites"
+msgstr "Top oblíbené"
+
+msgctxt "#30307"
+msgid "Longest"
+msgstr "Nejdelší"

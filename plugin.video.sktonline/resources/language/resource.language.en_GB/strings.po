@@ -1,0 +1,105 @@
+# Kodi Media Center language file
+# Addon Name: SkTonline
+# Addon id: plugin.video.sktonline
+# Addon Provider: cache-sk
+msgid ""
+msgstr ""
+
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgctxt "#30000"
+msgid "SkTonline"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Unexpected error occured:"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Previous page"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Next page"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Search"
+msgstr ""
+
+msgctxt "#30201"
+msgid "All"
+msgstr ""
+
+msgctxt "#30202"
+msgid "Documents CZ/SK dub"
+msgstr ""
+
+msgctxt "#30203"
+msgid "Documents CZ/SK sub"
+msgstr ""
+
+msgctxt "#30204"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#30205"
+msgid "Movies CZ/SK dub"
+msgstr ""
+
+msgctxt "#30206"
+msgid "Movies CZ/SK sub"
+msgstr ""
+
+msgctxt "#30207"
+msgid "Animated movies CZ/SK dub"
+msgstr ""
+
+msgctxt "#30208"
+msgid "Concerts / Music videos"
+msgstr ""
+
+msgctxt "#30209"
+msgid "Other"
+msgstr ""
+
+msgctxt "#30210"
+msgid "Series CZ/SK dub"
+msgstr ""
+
+msgctxt "#30211"
+msgid "Series CZ/SK sub"
+msgstr ""
+
+msgctxt "#30212"
+msgid "Trailers"
+msgstr ""
+
+msgctxt "#30301"
+msgid "Being Watched"
+msgstr ""
+
+msgctxt "#30302"
+msgid "Most Recent"
+msgstr ""
+
+msgctxt "#30303"
+msgid "Most Viewed"
+msgstr ""
+
+msgctxt "#30304"
+msgid "Most Commented"
+msgstr ""
+
+msgctxt "#30305"
+msgid "Top Rated"
+msgstr ""
+
+msgctxt "#30306"
+msgid "Top Favorites"
+msgstr ""
+
+msgctxt "#30307"
+msgid "Longest"
+msgstr ""
