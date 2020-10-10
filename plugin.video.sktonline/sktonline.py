@@ -5,8 +5,6 @@
 # License: AGPL v.3 https://www.gnu.org/licenses/agpl-3.0.html
 
 import sys
-from urllib import urlencode
-from urlparse import parse_qsl
 import xbmc
 import xbmcgui
 import xbmcplugin
@@ -14,6 +12,13 @@ import xbmcaddon
 import requests
 import traceback
 from bs4 import BeautifulSoup
+
+try:
+    from urllib import urlencode
+    from urlparse import parse_qsl
+except ImportError:
+    from urllib.parse import urlencode
+    from urllib.parse import parse_qsl
 
 _url = sys.argv[0]
 _handle = int(sys.argv[1])
