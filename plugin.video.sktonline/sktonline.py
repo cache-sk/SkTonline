@@ -174,7 +174,7 @@ def list_videos(category,order,page=None):
     except Exception as e:
         xbmc.log(str(e),level=xbmc.LOGNOTICE)
         traceback.print_exc()
-        xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001), str(e))
+        xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001) + "\n" + str(e))
         xbmcplugin.endOfDirectory(_handle)
         return
 
@@ -221,7 +221,7 @@ def list_search(query=None, page=None):
     except Exception as e:
         xbmc.log(str(e),level=xbmc.LOGNOTICE)
         traceback.print_exc()
-        xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001), str(e))
+        xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001) + "\n" + str(e))
         xbmcplugin.endOfDirectory(_handle)
         return
 
@@ -252,7 +252,7 @@ def list_streams(href):
     except Exception as e:
         xbmc.log(str(e),level=xbmc.LOGNOTICE)
         traceback.print_exc()
-        xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001), str(e))
+        xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001) + "\n" + str(e))
         xbmcplugin.endOfDirectory(_handle)
         return
 
