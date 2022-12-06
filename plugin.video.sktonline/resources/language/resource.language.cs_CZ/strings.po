@@ -28,6 +28,18 @@ msgctxt "#30005"
 msgid "Search"
 msgstr "Vyhledávání"
 
+msgctxt "#30006"
+msgid "Play"
+msgstr "Přehrát"
+
+msgctxt "#30007"
+msgid "Show plot"
+msgstr "Zobrazit zápletku"
+
+msgctxt "#30008"
+msgid "Last watched"
+msgstr "Naposledy zhlédnuto"
+
 msgctxt "#30201"
 msgid "All"
 msgstr "Vše"

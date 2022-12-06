@@ -28,6 +28,18 @@ msgctxt "#30005"
 msgid "Search"
 msgstr ""
 
+msgctxt "#30006"
+msgid "Play"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Show plot"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Last watched"
+msgstr ""
+
 msgctxt "#30201"
 msgid "All"
 msgstr ""
