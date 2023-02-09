@@ -30,7 +30,10 @@ _addon = xbmcaddon.Addon()
 _session = requests.Session()
 _profile = translatePath( _addon.getAddonInfo('profile'))
 
-BASE_URL = 'https://online.sktorrent.eu'
+_useLogin = "true" == _addon.getSetting("uselogin")
+
+BASE_DOMAIN = 'online.sktorrent.eu'
+BASE_URL = 'https://'+BASE_DOMAIN
 HEADERS={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', 'Referer': BASE_URL, 'Accept-Encoding': 'identity'}
 DEFAULT_PARAMS = ['type=public','t=a']
 SEARCH_DEFAULT_PARAMS = ['type=public','t=a','o=mr']
@@ -67,6 +70,24 @@ LISTS = [
 
 def get_url(**kwargs):
     return '{0}?{1}'.format(_url, urlencode(kwargs, 'utf-8'))
+
+def validate_login():
+    if _useLogin:
+        avs = _addon.getSetting('AVS')
+        if avs != '':
+            _session.cookies.set('AVS', _addon.getSetting('AVS'), domain=BASE_DOMAIN)
+        response = _session.get(BASE_URL+'/user', headers=HEADERS, allow_redirects=False)
+        if response.is_redirect and 'Location' in response.headers and 'login' in response.headers['Location']:
+            payload = {'username':_addon.getSetting('user'),'password':_addon.getSetting('password'),'submit_login':''}
+            response = _session.post(BASE_URL+'/login', headers=HEADERS, data=payload, allow_redirects=False)
+            if response.is_redirect:
+                _addon.setSetting('AVS',_session.cookies.get_dict()['AVS'])
+            else:
+                message = _addon.getLocalizedString(30991)
+                if sys.version_info[0] <3:
+                    import unicodedata
+                    message = unicodedata.normalize('NFKD', message).encode('ascii', 'ignore')
+                raise Exception(message)
 
 def check_profile():
     if not os.path.exists(_profile):
@@ -247,6 +268,7 @@ def list_videos(category,order,page=None):
         xbmcplugin.setPluginCategory(_handle, catName)
 
     try:
+        validate_login()
         data_url = BASE_URL + category + '?' + '&'.join(DEFAULT_PARAMS) + '&' + order + '&' + PAGE_PARAM + '=' + str(page)
         data_raw = _session.get(data_url, headers=HEADERS)
         data_text = data_raw.text
@@ -341,6 +363,7 @@ def list_search(query=None, page=None):
                 query = ''
 
         if query:
+            validate_login()
             data_url = BASE_URL + '/search/videos?' + '&'.join(SEARCH_DEFAULT_PARAMS) + '&' + urlencode({SEARCH_PARAM:query}, 'utf-8') + '&' + PAGE_PARAM + '=' + str(page)
             data_raw = _session.get(data_url, headers=HEADERS)
             data_text = data_raw.text
@@ -372,6 +395,7 @@ def list_search(query=None, page=None):
 
 def streams_and_play(href,title,img):
     try:
+        validate_login()
         data_url = BASE_URL + href
         data_raw = _session.get(data_url, headers=HEADERS)
         data_text = data_raw.text
@@ -405,14 +429,26 @@ def streams_and_play(href,title,img):
         store_last_watched(href, title, img)
         
         xbmcplugin.setResolvedUrl(_handle, True, list_item)
+    except IndexError as e:
+        xbmc.log(str(e),level=xbmc.LOGINFO)
+        traceback.print_exc()
+        xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001) + "\n" + str(e) + "\n" + _addon.getLocalizedString(30992))
+        xbmcplugin.endOfDirectory(_handle)
+        return
     except Exception as e:
         xbmc.log(str(e),level=xbmc.LOGINFO)
         traceback.print_exc()
         xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001) + "\n" + str(e))
         xbmcplugin.endOfDirectory(_handle)
         return
-
+        
 def router(paramstring):
+
+    #_addon = xbmcaddon.Addon()
+    #_session = requests.Session()
+    #_profile = translatePath( _addon.getAddonInfo('profile'))
+    #_useLogin = "true" == _addon.getSetting("uselogin")
+
     params = dict(parse_qsl(paramstring))
     if params:
         if 'href' in params:

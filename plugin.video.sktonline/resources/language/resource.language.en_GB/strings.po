@@ -115,3 +115,23 @@ msgstr ""
 msgctxt "#30307"
 msgid "Longest"
 msgstr ""
+
+msgctxt "#30901"
+msgid "Use login"
+msgstr ""
+
+msgctxt "#30902"
+msgid "User"
+msgstr ""
+
+msgctxt "#30903"
+msgid "Password"
+msgstr ""
+
+msgctxt "#30991"
+msgid "Bad user or password"
+msgstr ""
+
+msgctxt "#30992"
+msgid "Maybe you need to use a login."
+msgstr ""

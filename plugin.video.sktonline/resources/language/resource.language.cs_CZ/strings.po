@@ -115,3 +115,23 @@ msgstr "Top oblíbené"
 msgctxt "#30307"
 msgid "Longest"
 msgstr "Nejdelší"
+
+msgctxt "#30901"
+msgid "Use login"
+msgstr "Použít login"
+
+msgctxt "#30902"
+msgid "User"
+msgstr "Meno"
+
+msgctxt "#30903"
+msgid "Password"
+msgstr "Heslo"
+
+msgctxt "#30991"
+msgid "Bad user or password"
+msgstr "Špatné jméno nebo heslo"
+
+msgctxt "#30992"
+msgid "Maybe you need to use a login."
+msgstr "Možná potřebuješ použít login."
