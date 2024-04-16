@@ -72,6 +72,7 @@ def get_url(**kwargs):
     return '{0}?{1}'.format(_url, urlencode(kwargs, 'utf-8'))
 
 def validate_login():
+    return #login no longer supported due recaptcha
     if _useLogin:
         avs = _addon.getSetting('AVS')
         if avs != '':
@@ -401,6 +402,15 @@ def streams_and_play(href,title,img):
         data_text = data_raw.text
         html = BeautifulSoup(data_text, 'html.parser')
         #title = html.select('h3')[0].string
+        
+        #signup and login form test
+        signup_form = html.find_all('form', {'id' : 'signup_form'}, True)
+        login_form = html.find_all('form', {'id' : 'login_form'}, True)
+        if len(signup_form) > 0 and len(login_form) > 0:
+            xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30999))
+            xbmcplugin.setResolvedUrl(_handle, False, xbmcgui.ListItem())
+            return
+        
         plot = html.find_all('div', {'class' : 'm-t-10 overflow-hidden'}, True)[0].string.strip()
         video = html.find_all('video', {'id' : 'video'}, True)[0]
         sources = video.select('source')
@@ -412,7 +422,7 @@ def streams_and_play(href,title,img):
 
         result = xbmcgui.Dialog().contextmenu(cm)
         if result == -1:
-            xbmcplugin.setResolvedUrl(_handle, True, xbmcgui.ListItem())
+            xbmcplugin.setResolvedUrl(_handle, False, xbmcgui.ListItem())
             return
         elif result == len(sources):
             xbmcgui.Dialog().textviewer(title,plot)
@@ -433,13 +443,15 @@ def streams_and_play(href,title,img):
         xbmc.log(str(e),level=xbmc.LOGINFO)
         traceback.print_exc()
         xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001) + "\n" + str(e) + "\n" + _addon.getLocalizedString(30992))
-        xbmcplugin.endOfDirectory(_handle)
+        xbmcplugin.setResolvedUrl(_handle, True, xbmcgui.ListItem())
+        #xbmcplugin.endOfDirectory(_handle)
         return
     except Exception as e:
         xbmc.log(str(e),level=xbmc.LOGINFO)
         traceback.print_exc()
         xbmcgui.Dialog().ok(_addon.getLocalizedString(30000), _addon.getLocalizedString(30001) + "\n" + str(e))
-        xbmcplugin.endOfDirectory(_handle)
+        xbmcplugin.setResolvedUrl(_handle, True, xbmcgui.ListItem())
+        #xbmcplugin.endOfDirectory(_handle)
         return
         
 def router(paramstring):

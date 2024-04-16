@@ -135,3 +135,7 @@ msgstr ""
 msgctxt "#30992"
 msgid "Maybe you need to use a login."
 msgstr ""
+
+msgctxt "#30999"
+msgid "Unable to get stream. The site requires a login, but it already uses recaptcha, which cannot be bypassed."
+msgstr ""

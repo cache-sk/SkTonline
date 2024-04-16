@@ -135,3 +135,7 @@ msgstr "Špatné jméno nebo heslo"
 msgctxt "#30992"
 msgid "Maybe you need to use a login."
 msgstr "Možná potřebuješ použít login."
+
+msgctxt "#30999"
+msgid "Unable to get stream. The site requires a login, but it already uses recaptcha, which cannot be bypassed."
+msgstr "Nelze získat stream. Stránka vyžaduje přihlášení, ale již používá recaptchu, kterou nelze obejít."
